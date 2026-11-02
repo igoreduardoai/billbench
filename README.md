@@ -1,6 +1,6 @@
 # BillBench: where frontier models get US medical-bill math wrong
 
-**At a glance**
+## At a glance
 - **What:** an eval of one question patients and billing staff ask every day: *"how much does the patient owe?"* 10 scored tasks (BillBench-Expert), each with one answer to the cent, graded by a deterministic engine. No LLM judge.
 - **Headline result (2 Nov 2026, 5 frontier open-weight models, 3 runs each, temperature 0):** **117/150 (78%)** on Expert vs **143/150 (95%)** on a Core control where every rule is spelled out. Same models, same arithmetic, so the gap is missing billing knowledge, not math.
 - **Hardest task:** Medicare DME from a supplier that does not accept assignment (x13): **3 of 15 runs correct.** In 7 runs the model applied the physician "limiting charge" (115%) to a DME supplier, which the law does not limit. The patient is told $31.50 when they will really pay $68.00.
