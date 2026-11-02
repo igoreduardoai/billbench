@@ -1,0 +1,5 @@
+# SHA-256 of the task-defining files, taken at 2026-11-02 16:10 CST right before the final run (results/final). Check: sha256sum -c <(grep -v '^#' results/TASKS-SHA256-final.txt)
+8468c28bb73bf073d7659b11ad6b16478ba16f897f021eb206650359902eeaa8  billbench/engine.py
+598821b28ef099824a52d2fa624f291d9b7a5375c857ab07b8bece9606e4f12e  billbench/expert.py
+9182c88c5abaab934dc90c625aeadc3690b3e149385f356f3ee72d420b45619b  billbench/tasks.py
+005c768df2437113aed7abbb901ba74b5c1692f21494ca4dafc7f2c1962ca88b  billbench/grader.py

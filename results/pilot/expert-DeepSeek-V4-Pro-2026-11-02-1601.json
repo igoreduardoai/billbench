@@ -1,0 +1,120 @@
+{
+ "model": "deepseek-ai/DeepSeek-V4-Pro",
+ "provider": "nebius",
+ "date": "2026-11-02-1601",
+ "suite": "expert",
+ "temperature": 0,
+ "repeats": 3,
+ "max_tokens": 12000,
+ "rows": [
+  {
+   "id": "x11",
+   "suite": "expert",
+   "repeat": 1,
+   "expected": 4500.0,
+   "got": 4500.0,
+   "correct": true,
+   "failure_modes": [],
+   "finish_reason": "stop",
+   "seconds": 4.4,
+   "prompt_tokens": 343,
+   "completion_tokens": 300,
+   "est_usd": 0.001749,
+   "status": "ok",
+   "output_tail": "Let\u2019s break this down step-by-step under **Original Medicare (Parts A and B) in 2026**, with no Medigap or other coverage.\n\n---\n\n**1. SNF coverage requirements under Medicare Part A**  \n- Patient must have a **qualifying inpatient hospital stay** of at least **3 consecutive days** (not counting the day of discharge).  \n- Observation days do **not** count toward the 3-day inpatient requirement.\n\n---\n\n**2. Hospital timeline**  \n- Jan 3, 7 pm: Outpatient observation (does not count).  \n- Jan 4, 11 am: Formally admitted as inpatient.  \n- Jan 6: Discharged from hospital.  \n\nInpatient days:  \n- Jan 4 (admission day)  \n- Jan 5 (full inpatient day)  \n- Jan 6 (discharge day \u2014 does not count)  \n\nThat\u2019s only **1 qualifying inpatient day** (Jan 5).  \nThe 3-day minimum is **not met**.\n\n---\n\n**3. SNF coverage**  \nBecause the 3-day inpatient requirement is not met, **Medicare Part A will not cover the SNF stay at all**.  \nThe patient is responsible for the SNF\u2019s private daily rate for all 10 days.\n\n---\n\n**4. Calculation**  \n10 days \u00d7 $450.00/day = **$4,500.00**\n\n---\n\nFINAL: $4,500.00"
+  },
+  {
+   "id": "x12",
+   "suite": "expert",
+   "repeat": 1,
+   "expected": 8246.0,
+   "got": 8680.0,
+   "correct": false,
+   "failure_modes": [
+    "discharge_day_counted",
+    "coins_from_day_60"
+   ],
+   "finish_reason": "stop",
+   "seconds": 4.4,
+   "prompt_tokens": 234,
+   "completion_tokens": 307,
+   "est_usd": 0.001602,
+   "status": "ok",
+   "output_tail": "Let\u2019s break this down step-by-step.\n\n**1. Length of stay**  \nAdmitted: January 2, 2026  \nDischarged: March 18, 2026  \nJanuary: 30 days (from Jan 2 to Jan 31 inclusive = 30 days)  \nFebruary: 28 days (2026 is not a leap year)  \nMarch: 18 days  \nTotal days = 30 + 28 + 18 = **76 days**.\n\n---\n\n**2. Medicare Part A benefit period coverage (2026)**  \n- **Days 1\u201360**: Deductible of $1,736.00 (covers all costs for first 60 days).  \n- **Days 61\u201390**: Coinsurance of $434.00/day.  \n- **Days 91+**: Lifetime reserve days at $868.00/day (patient has never used them, so all 60 are available).\n\n---\n\n**3. Apply to this stay**  \n- Days 1\u201360: $1,736.00 deductible.  \n- Days 61\u201376: That\u2019s 16 days at $434.00/day = 16 \u00d7 434 = $6,944.00.  \n- No lifetime reserve days needed (stay is only 76 days).\n\n---\n\n**4. Total cost-sharing**  \n$1,736.00 + $6,944.00 = **$8,680.00**.\n\n---\n\nFINAL: $8,680.00"
+  },
+  {
+   "id": "x11",
+   "suite": "expert",
+   "repeat": 2,
+   "expected": 4500.0,
+   "got": 0.0,
+   "correct": false,
+   "failure_modes": [
+    "snf_covered"
+   ],
+   "finish_reason": "stop",
+   "seconds": 4.8,
+   "prompt_tokens": 343,
+   "completion_tokens": 306,
+   "est_usd": 0.001773,
+   "status": "ok",
+   "output_tail": "Let\u2019s break this down step-by-step under Original Medicare rules for 2026.\n\n---\n\n**1. Hospital stay classification**  \n- Jan 3, 7 pm \u2013 Jan 4, 11 am: Outpatient observation (not inpatient).  \n- Jan 4, 11 am: Formally admitted as inpatient.  \n- Jan 6: Discharged from hospital.\n\nFor Medicare SNF coverage, the **3-day prior inpatient hospital stay** rule applies.  \nObservation days **do not count** toward the 3-day inpatient requirement.  \nInpatient days:  \n- Jan 4 (admission day counts)  \n- Jan 5  \n- Jan 6 (discharge day counts)  \n\nThat\u2019s **3 inpatient days**, so the SNF stay qualifies for Medicare coverage.\n\n---\n\n**2. SNF benefit period**  \nMedicare covers up to 100 days per benefit period:  \n- Days 1\u201320: $0 coinsurance.  \n- Days 21\u2013100: $217.00/day coinsurance (2026 rate).\n\nThe patient stayed 10 days (Jan 6\u2013Jan 16).  \n- Days 1\u201310 fall entirely in the first 20 days, so **no daily coinsurance applies**.\n\n---\n\n**3. Patient responsibility**  \nSince the stay is fully covered and within the first 20 days, the patient owes **$0.00** to the SNF for the covered stay.\n\n---\n\nFINAL: $0.00"
+  },
+  {
+   "id": "x12",
+   "suite": "expert",
+   "repeat": 2,
+   "expected": 8246.0,
+   "got": 8680.0,
+   "correct": false,
+   "failure_modes": [
+    "discharge_day_counted",
+    "coins_from_day_60"
+   ],
+   "finish_reason": "stop",
+   "seconds": 4.5,
+   "prompt_tokens": 234,
+   "completion_tokens": 316,
+   "est_usd": 0.001638,
+   "status": "ok",
+   "output_tail": "Let\u2019s break this down step-by-step.\n\n**1. Length of stay**  \nAdmitted: January 2, 2026  \nDischarged: March 18, 2026  \nJanuary: 30 days (from Jan 2 to Jan 31 inclusive = 30 days)  \nFebruary: 28 days (2026 is not a leap year)  \nMarch: 18 days  \nTotal days = 30 + 28 + 18 = **76 days**.\n\n---\n\n**2. Medicare Part A benefit period structure (2026)**  \n- **Days 1\u201360**: Covered after the inpatient deductible ($1,736.00).  \n- **Days 61\u201390**: $434.00/day coinsurance.  \n- **Days 91+**: Lifetime reserve days at $868.00/day (patient has 60 lifetime reserve days available, never used before).\n\n---\n\n**3. Apply to this stay**  \n- Days 1\u201360: Deductible = $1,736.00 (no daily coinsurance).  \n- Days 61\u201376: That\u2019s 16 days at $434.00/day = 16 \u00d7 434.00 = $6,944.00.  \n- No lifetime reserve days needed (stay is only 76 days).\n\n---\n\n**4. Total cost-sharing**  \n$1,736.00 (deductible) + $6,944.00 (coinsurance) = **$8,680.00**.\n\n---\n\nFINAL: $8,680.00"
+  },
+  {
+   "id": "x11",
+   "suite": "expert",
+   "repeat": 3,
+   "expected": 4500.0,
+   "got": 0.0,
+   "correct": false,
+   "failure_modes": [
+    "snf_covered"
+   ],
+   "finish_reason": "stop",
+   "seconds": 4.3,
+   "prompt_tokens": 343,
+   "completion_tokens": 268,
+   "est_usd": 0.001621,
+   "status": "ok",
+   "output_tail": "Let\u2019s break this down step-by-step under Original Medicare rules for 2026.\n\n---\n\n**1. Determine if the SNF stay is covered by Medicare Part A**  \n- The patient had a 3-day inpatient hospital stay (Jan 4\u20136), which meets the 3-day qualifying inpatient requirement.  \n- Observation time does not count toward the 3-day requirement, but here the inpatient stay itself is exactly 3 days (admitted Jan 4, discharged Jan 6).  \n- The patient was admitted to a Medicare-certified SNF within 30 days for daily skilled care.  \n- **Conclusion:** Medicare Part A covers the SNF stay.\n\n---\n\n**2. Apply the 2026 SNF benefit structure**  \n- Days 1\u201320: $0 coinsurance.  \n- Days 21\u2013100: $217.00/day coinsurance.  \n- The patient stayed 10 days (Jan 6\u201316).  \n- All 10 days fall within the first 20 days of the benefit period (since no prior SNF stay in the benefit period).  \n\n---\n\n**3. Patient\u2019s cost**  \n- Days 1\u201310: $0/day.  \n- Total owed to SNF: $0.00.\n\n---\n\nFINAL: $0.00"
+  },
+  {
+   "id": "x12",
+   "suite": "expert",
+   "repeat": 3,
+   "expected": 8246.0,
+   "got": 8680.0,
+   "correct": false,
+   "failure_modes": [
+    "discharge_day_counted",
+    "coins_from_day_60"
+   ],
+   "finish_reason": "stop",
+   "seconds": 4.3,
+   "prompt_tokens": 234,
+   "completion_tokens": 295,
+   "est_usd": 0.001554,
+   "status": "ok",
+   "output_tail": "Let\u2019s break this down step-by-step.\n\n**1. Length of stay**  \nAdmitted: January 2, 2026  \nDischarged: March 18, 2026  \nDays in hospital:  \n- January: 30 days (Jan 2\u201331)  \n- February: 28 days (2026 is not a leap year)  \n- March: 18 days (Mar 1\u201318)  \nTotal = 30 + 28 + 18 = **76 days**.\n\n**2. Medicare Part A benefit period coverage (2026)**  \n- **Days 1\u201360**: Deductible of $1,736.00 covers all.  \n- **Days 61\u201390**: $434.00/day coinsurance.  \n- **Days 91+**: Lifetime reserve days at $868.00/day (patient has never used them, so all 60 are available).\n\n**3. Apply to this stay**  \n- Days 1\u201360: $1,736.00 deductible (no additional daily charge).  \n- Days 61\u201376: 16 days \u00d7 $434.00 = $6,944.00.  \n- No lifetime reserve days needed (stay is only 76 days).\n\n**4. Total cost-sharing**  \n$1,736.00 + $6,944.00 = **$8,680.00**.\n\nFINAL: $8,680.00"
+  }
+ ]
+}

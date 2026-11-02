@@ -1,0 +1,113 @@
+{
+ "model": "deepseek-ai/DeepSeek-V4-Pro",
+ "provider": "nebius",
+ "date": "2026-11-02-1605",
+ "suite": "expert",
+ "temperature": 0,
+ "repeats": 3,
+ "max_tokens": 12000,
+ "rows": [
+  {
+   "id": "x13",
+   "suite": "expert",
+   "repeat": 1,
+   "expected": 680.0,
+   "got": 299.25,
+   "correct": false,
+   "failure_modes": [
+    "limiting_on_95"
+   ],
+   "finish_reason": "stop",
+   "seconds": 3.9,
+   "prompt_tokens": 248,
+   "completion_tokens": 319,
+   "est_usd": 0.001673,
+   "status": "ok",
+   "output_tail": "Under Original Medicare Part B for DME, the patient pays 20% coinsurance after the deductible is met. Since the 2026 Part B deductible is already met, that doesn\u2019t apply here.  \n\nFor a **non-participating supplier that does not accept assignment**, Medicare pays 80% of the approved amount, but the approved amount is reduced to 95% of the normal Medicare-approved amount.  \n\n**Step-by-step:**  \n- Medicare-approved amount (DMEPOS fee schedule): $900.00  \n- Reduced approved amount for non-assignment: $900.00 \u00d7 0.95 = $855.00  \n- Medicare pays 80% of $855.00 = $684.00  \n- Patient\u2019s coinsurance: 20% of $855.00 = $171.00  \n\nSince the supplier does not accept assignment, they can charge up to the **limiting charge**, which is 115% of the reduced approved amount:  \n- Limiting charge: $855.00 \u00d7 1.15 = $983.25  \n\nThe supplier charged $1,400.00, but the patient is only liable up to the limiting charge ($983.25). The patient paid $1,400.00 upfront, so Medicare will reimburse the patient directly for its share ($684.00).  \n\n**Patient\u2019s net out-of-pocket:**  \n$983.25 (limiting charge) \u2013 $684.00 (Medicare reimbursement) = $299.25  \n\nFINAL: $299.25"
+  },
+  {
+   "id": "x14",
+   "suite": "expert",
+   "repeat": 1,
+   "expected": 3906.0,
+   "got": 3906.0,
+   "correct": true,
+   "failure_modes": [],
+   "finish_reason": "stop",
+   "seconds": 4.1,
+   "prompt_tokens": 282,
+   "completion_tokens": 376,
+   "est_usd": 0.001955,
+   "status": "ok",
+   "output_tail": "Let\u2019s break this down step-by-step.\n\n---\n\n**1. First hospital stay (Mar 1\u2013Mar 5, 2026)**  \n- This is a new benefit period.  \n- Inpatient deductible for 2026: **$1,736.00**.  \n- Stay is 4 days (Mar 1, 2, 3, 4; discharged Mar 5).  \n- Medicare Part A covers days 1\u201360 after deductible, so no additional coinsurance here.  \nCost: **$1,736.00**.\n\n---\n\n**2. SNF stay (Mar 5\u2013Apr 4, 2026)**  \n- SNF days count from day of admission:  \n  - Days 1\u201320: $0 coinsurance.  \n  - Days 21\u201330 (Mar 25\u2013Apr 3): 10 days \u00d7 $217.00 = **$2,170.00**.  \n  - Day 31 (Apr 4): discharge day, no charge.  \nCost: **$2,170.00**.\n\n---\n\n**3. Second hospital stay (May 20\u2013May 23, 2026)**  \n- Still within the same benefit period (starts Mar 1, ends Aug 31 if no 60-day break).  \n- Deductible already met, so no new deductible.  \n- Stay is 3 days (May 20, 21, 22; discharged May 23).  \n- Days 1\u201360 in benefit period: $0 coinsurance.  \nCost: **$0.00**.\n\n---\n\n**Total Part A cost-sharing**:  \n$1,736.00 + $2,170.00 + $0.00 = **$3,906.00**.\n\n---\n\nFINAL: $3,906.00"
+  },
+  {
+   "id": "x13",
+   "suite": "expert",
+   "repeat": 2,
+   "expected": 680.0,
+   "got": 315.0,
+   "correct": false,
+   "failure_modes": [
+    "limiting_charge_applied"
+   ],
+   "finish_reason": "stop",
+   "seconds": 3.6,
+   "prompt_tokens": 248,
+   "completion_tokens": 313,
+   "est_usd": 0.001649,
+   "status": "ok",
+   "output_tail": "Under Original Medicare Part B for DME, the patient has already met the 2026 deductible.  \nThe supplier is non-participating and does not accept assignment, so:\n\n1. **Medicare-approved amount** = $900.00  \n2. **Limiting charge** for non-participating suppliers = 115% of the approved amount = 0.15 \u00d7 $900 = $135.00 above approved, so $900 + $135 = $1,035.00 maximum the supplier can charge.  \n   The supplier charged $1,400.00, which exceeds the limiting charge, but for this calculation we use the limiting charge as the maximum the patient is obligated to pay.  \n3. **Medicare pays 80%** of the approved amount = 0.80 \u00d7 $900 = $720.00 directly to the patient (since assignment is not accepted).  \n4. **Patient\u2019s responsibility** = Limiting charge \u2013 Medicare payment = $1,035.00 \u2013 $720.00 = $315.00.  \n\nSince the patient paid the supplier $1,400.00 upfront, they are entitled to a refund of the overcharge above the limiting charge ($1,400.00 \u2013 $1,035.00 = $365.00) plus the Medicare reimbursement of $720.00.  \n\nNet out-of-pocket cost = $1,400.00 \u2013 $365.00 \u2013 $720.00 = $315.00.\n\nFINAL: $315.00"
+  },
+  {
+   "id": "x14",
+   "suite": "expert",
+   "repeat": 2,
+   "expected": 3906.0,
+   "got": 3906.0,
+   "correct": true,
+   "failure_modes": [],
+   "finish_reason": "stop",
+   "seconds": 3.9,
+   "prompt_tokens": 282,
+   "completion_tokens": 376,
+   "est_usd": 0.001955,
+   "status": "ok",
+   "output_tail": "Let\u2019s break this down step-by-step.\n\n---\n\n**1. First hospital stay (Mar 1\u2013Mar 5, 2026)**  \n- This is a new benefit period.  \n- Inpatient deductible for 2026: **$1,736.00**.  \n- Stay is 4 days (Mar 1, 2, 3, 4; discharge Mar 5), so no additional daily coinsurance (Medicare Part A covers days 1\u201360 fully after deductible).  \n- Cost: **$1,736.00**.\n\n---\n\n**2. SNF stay (Mar 5\u2013Apr 4, 2026)**  \n- SNF days 1\u201320: $0 coinsurance.  \n- Days 21\u201330 (Mar 25\u2013Apr 3): 10 days \u00d7 $217.00 = **$2,170.00**.  \n- Day 31 (Apr 4): discharge day, no charge.  \n- SNF cost: **$2,170.00**.\n\n---\n\n**3. Second hospital stay (May 20\u2013May 23, 2026)**  \n- Still within the same benefit period (starts Mar 1, ends after 60 consecutive days without hospital/SNF care).  \n- Since the SNF stay ended Apr 4, the 60-day break hasn\u2019t elapsed by May 20, so no new deductible.  \n- Stay is 3 days, all within the first 60 days of the benefit period, so $0 coinsurance.  \n- Cost: **$0.00**.\n\n---\n\n**Total Part A cost-sharing**:  \n$1,736.00 + $2,170.00 + $0.00 = **$3,906.00**.\n\n---\n\nFINAL: $3,906.00"
+  },
+  {
+   "id": "x13",
+   "suite": "expert",
+   "repeat": 3,
+   "expected": 680.0,
+   "got": 299.25,
+   "correct": false,
+   "failure_modes": [
+    "limiting_on_95"
+   ],
+   "finish_reason": "stop",
+   "seconds": 3.8,
+   "prompt_tokens": 248,
+   "completion_tokens": 329,
+   "est_usd": 0.001713,
+   "status": "ok",
+   "output_tail": "Under Original Medicare Part B for DME, the patient pays 20% coinsurance after the deductible is met. Since the 2026 Part B deductible is already met, that doesn\u2019t apply here.  \n\nFor a **non-participating supplier that does not accept assignment**, Medicare pays 80% of the approved amount, but the approved amount is reduced to 95% of the Medicare fee schedule amount because the supplier is non-participating.  \n\n**Step-by-step:**  \n- Medicare-approved amount (DMEPOS fee schedule): $900.00  \n- Reduced approved amount for non-par supplier: $900.00 \u00d7 0.95 = $855.00  \n- Medicare pays 80% of $855.00: $855.00 \u00d7 0.80 = $684.00  \n- Patient\u2019s coinsurance: 20% of $855.00 = $171.00  \n- Limiting charge for non-par DME: The supplier can charge up to 115% of the reduced approved amount.  \n  $855.00 \u00d7 1.15 = $983.25  \n- The supplier charged $1,400.00, but Medicare will only recognize the limiting charge as the maximum the patient is liable for.  \n- Patient paid $1,400.00 upfront, but Medicare reimbursement goes to the patient (since the patient paid in full).  \n- Patient\u2019s net out-of-pocket: $983.25 (limiting charge) \u2013 $684.00 (Medicare reimbursement) = $299.25  \n\nFINAL: $299.25"
+  },
+  {
+   "id": "x14",
+   "suite": "expert",
+   "repeat": 3,
+   "expected": 3906.0,
+   "got": 3906.0,
+   "correct": true,
+   "failure_modes": [],
+   "finish_reason": "stop",
+   "seconds": 3.7,
+   "prompt_tokens": 282,
+   "completion_tokens": 334,
+   "est_usd": 0.001787,
+   "status": "ok",
+   "output_tail": "Let\u2019s break this down step-by-step.\n\n---\n\n**1. First hospital stay (Mar 1\u2013Mar 5, 2026)**  \n- This is a new benefit period.  \n- Inpatient deductible for 2026: **$1,736.00**.  \n- Stay is 4 days (Mar 1, 2, 3, 4; discharged Mar 5).  \n- Medicare Part A covers days 1\u201360 after deductible, so no additional coinsurance here.  \nCost: **$1,736.00**.\n\n---\n\n**2. SNF stay (Mar 5\u2013Apr 4, 2026)**  \n- SNF days 1\u201320: $0 coinsurance.  \n- Days 21\u201330 (Mar 25\u2013Apr 3): 10 days \u00d7 $217.00 = **$2,170.00**.  \n- Day 31 (Apr 4): discharge day, no charge.  \nCost: **$2,170.00**.\n\n---\n\n**3. Second hospital stay (May 20\u2013May 23, 2026)**  \n- Still in same benefit period (within 60 days of SNF discharge).  \n- Deductible already met for this period.  \n- Stay is 3 days, all within the first 60 days of the benefit period, so no coinsurance.  \nCost: **$0.00**.\n\n---\n\n**Total Part A cost-sharing:**  \n$1,736.00 + $2,170.00 = **$3,906.00**.\n\n---\n\nFINAL: $3,906.00"
+  }
+ ]
+}

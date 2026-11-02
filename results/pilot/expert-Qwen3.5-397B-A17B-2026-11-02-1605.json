@@ -1,0 +1,115 @@
+{
+ "model": "Qwen/Qwen3.5-397B-A17B",
+ "provider": "nebius",
+ "date": "2026-11-02-1605",
+ "suite": "expert",
+ "temperature": 0,
+ "repeats": 3,
+ "max_tokens": 12000,
+ "rows": [
+  {
+   "id": "x13",
+   "suite": "expert",
+   "repeat": 1,
+   "expected": 680.0,
+   "got": 315.0,
+   "correct": false,
+   "failure_modes": [
+    "limiting_charge_applied"
+   ],
+   "finish_reason": "stop",
+   "seconds": 56.7,
+   "prompt_tokens": 268,
+   "completion_tokens": 6879,
+   "est_usd": 0.024898,
+   "status": "ok",
+   "output_tail": "\n\n1.  **Medicare-Approved Amount:** $900.00.\n2.  **Limiting Charge Cap:** For DME supplied by a non-participating supplier not accepting assignment, federal law (42 CFR \u00a7 414.510) limits the charge to 115% of the approved amount.\n    *   $900.00 \u00d7 1.15 = $1,035.00.\n    *   The supplier's charge of $1,400.00 exceeds this limit; the patient is only legally liable for $1,035.00.\n3.  **Medicare Payment:** Medicare pays 80% of the approved amount (deductible is met).\n    *   $900.00 \u00d7 0.80 = $720.00.\n    *   Since assignment was not accepted, Medicare pays this amount to the patient (beneficiary).\n4.  **Patient Net Cost:** The patient's liability is the Limiting Charge minus the Medicare reimbursement.\n    *   $1,035.00 (Liability) - $720.00 (Reimbursement) = $315.00.\n    *   Alternatively: 20% coinsurance ($180) + 15% limiting charge excess ($135) = $315.00.\n\nFINAL: $315.00"
+  },
+  {
+   "id": "x14",
+   "suite": "expert",
+   "repeat": 1,
+   "expected": 3906.0,
+   "got": 4123.0,
+   "correct": false,
+   "failure_modes": [
+    "snf_11_days"
+   ],
+   "finish_reason": "stop",
+   "seconds": 49.2,
+   "prompt_tokens": 324,
+   "completion_tokens": 5771,
+   "est_usd": 0.020938,
+   "status": "ok",
+   "output_tail": "\n\n**1. Determine the Benefit Period**\nUnder Medicare Part A, a benefit period starts on the day of inpatient admission and ends after 60 consecutive days without inpatient hospital or SNF care.\n*   **Stay 1 (Hospital):** Mar 1 \u2013 Mar 5. (Starts Benefit Period 1)\n*   **Stay 2 (SNF):** Mar 5 \u2013 Apr 4. (Continues Benefit Period 1)\n*   **Gap:** Apr 5 \u2013 May 19 (45 days without care). Since 45 days < 60 days, the benefit period does not end.\n*   **Stay 3 (Hospital):** May 20 \u2013 May 23. (Continues Benefit Period 1)\nAll care falls within a single benefit period.\n\n**2. Calculate Hospital Cost-Sharing**\n*   **Stay 1 (5 days):** The Part A inpatient deductible applies once per benefit period.\n    *   Cost: **$1,736.00**\n*   **Stay 3 (4 days):** Occurs in the same benefit period. The deductible is already met. Days 1\u201360 have no coinsurance.\n    *   Cost: **$0.00**\n\n**3. Calculate SNF Cost-Sharing**\n*   **Stay 2 Duration:** Mar 5 to Apr 4.\n    *   March: 27 days (31 - 5 + 1)\n    *   April: 4 days\n    *   Total SNF days: 31 days.\n*   **Coinsurance:** Medicare covers days 1\u201320 fully. Days 21\u2013100 require coinsurance.\n    *   Chargeable days: 31 total - 20 covered = 11 days.\n    *   Rate: $217.00/day.\n    *   Cost: 11 \u00d7 $217.00 = **$2,387.00**\n\n**4. Total Cost-Sharing**\n$1,736.00 (Hospital Deductible) + $2,387.00 (SNF Coinsurance) + $0.00 (Second Hospital Stay) = $4,123.00\n\nFINAL: $4,123.00"
+  },
+  {
+   "id": "x13",
+   "suite": "expert",
+   "repeat": 2,
+   "expected": 680.0,
+   "got": 315.0,
+   "correct": false,
+   "failure_modes": [
+    "limiting_charge_applied"
+   ],
+   "finish_reason": "stop",
+   "seconds": 75.2,
+   "prompt_tokens": 268,
+   "completion_tokens": 9606,
+   "est_usd": 0.034716,
+   "status": "ok",
+   "output_tail": "g charge rules if the supplier is non-participating and does not accept assignment.\n2.  **Determine Approved Amount:** The Medicare-approved amount (fee schedule) is given as $900.00. Unlike physician services, DME fee schedules generally do not reduce the base approved amount for non-participating suppliers (no 95% rule), though payment percentages differ.\n3.  **Calculate Limiting Charge:** For non-participating DME suppliers who do not accept assignment, federal law (Social Security Act \u00a71834(a)(15)) limits the charge to 115% of the Medicare-approved amount.\n    *   Limiting Charge = $900.00 \u00d7 1.15 = $1,035.00.\n    *   The supplier's charge of $1,400.00 exceeds this limit. The patient is only legally liable for $1,035.00.\n4.  **Calculate Medicare Payment:** Medicare pays 80% of the approved amount for DME.\n    *   Medicare Payment = $900.00 \u00d7 0.80 = $720.00.\n    *   Since assignment is not accepted, Medicare pays the patient directly.\n5.  **Calculate Patient Net Cost:** The patient's legal liability is the Limiting Charge minus the Medicare Payment (or equivalently, the 20% coinsurance plus the 15% excess charge).\n    *   Patient Liability = $1,035.00 (Limit) - $720.00 (Medicare) = $315.00.\n    *   Alternatively: ($900 \u00d7 0.20) + ($900 \u00d7 0.15) = $180 + $135 = $315.00.\n    *   Although the patient paid $1,400.00 upfront, the excess over the limiting charge ($365.00) is not legally owed and is recoverable; the net cost under federal law is the liability amount.\n\nFINAL: $315.00"
+  },
+  {
+   "id": "x14",
+   "suite": "expert",
+   "repeat": 2,
+   "expected": 3906.0,
+   "got": 3906.0,
+   "correct": true,
+   "failure_modes": [],
+   "finish_reason": "stop",
+   "seconds": 53.4,
+   "prompt_tokens": 324,
+   "completion_tokens": 6365,
+   "est_usd": 0.023076,
+   "status": "ok",
+   "output_tail": "s after 60 consecutive days without inpatient hospital or SNF care.\n*   **Start:** Mar 1, 2026 (Hospital admission).\n*   **Gap Check:** SNF discharge was Apr 4, 2026. The next hospital admission is May 20, 2026.\n    *   Days without care: Apr 5 to May 19 (counting from the day after discharge).\n    *   April (30 days total): 30 - 4 = 26 days.\n    *   May: 19 days.\n    *   Total gap: 45 days.\n    *   Since 45 days < 60 days, the benefit period **does not reset**. All care falls within the same benefit period.\n\n**2. Calculate Cost-Sharing per Stay**\n*   **Hospital Stay 1 (Mar 1 \u2013 Mar 5):**\n    *   Patient is responsible for the Part A inpatient deductible per benefit period.\n    *   2026 Deductible: **$1,736.00**.\n*   **SNF Stay (Mar 5 \u2013 Apr 4):**\n    *   Days 1\u201320: $0 coinsurance.\n    *   Days 21\u2013100: $217.00/day coinsurance.\n    *   Count of SNF days: Admitted Mar 5, discharged Apr 4. The day of discharge is not counted.\n        *   March 5\u201331: 27 days.\n        *   April 1\u20133: 3 days.\n        *   Total SNF days: 30 days.\n    *   Coinsurance days: Days 21 through 30 (10 days).\n    *   Calculation: 10 days \u00d7 $217.00 = **$2,170.00**.\n*   **Hospital Stay 2 (May 20 \u2013 May 23):**\n    *   Same benefit period. The deductible is already met.\n    *   Days 1\u201360 of hospitalization in a benefit period have no daily coinsurance after the deductible.\n    *   Cost: **$0.00**.\n\n**3. Total Cost-Sharing**\n$1,736.00 (Hospital 1) + $2,170.00 (SNF) + $0.00 (Hospital 2) = $3,906.00.\n\nFINAL: $3,906.00"
+  },
+  {
+   "id": "x13",
+   "suite": "expert",
+   "repeat": 3,
+   "expected": 680.0,
+   "got": 315.0,
+   "correct": false,
+   "failure_modes": [
+    "limiting_charge_applied"
+   ],
+   "finish_reason": "stop",
+   "seconds": 75.2,
+   "prompt_tokens": 268,
+   "completion_tokens": 9606,
+   "est_usd": 0.034716,
+   "status": "ok",
+   "output_tail": "g charge rules if the supplier is non-participating and does not accept assignment.\n2.  **Determine Approved Amount:** The Medicare-approved amount (fee schedule) is given as $900.00. Unlike physician services, DME fee schedules generally do not reduce the base approved amount for non-participating suppliers (no 95% rule), though payment percentages differ.\n3.  **Calculate Limiting Charge:** For non-participating DME suppliers who do not accept assignment, federal law (Social Security Act \u00a71834(a)(15)) limits the charge to 115% of the Medicare-approved amount.\n    *   Limiting Charge = $900.00 \u00d7 1.15 = $1,035.00.\n    *   The supplier's charge of $1,400.00 exceeds this limit. The patient is only legally liable for $1,035.00.\n4.  **Calculate Medicare Payment:** Medicare pays 80% of the approved amount for DME.\n    *   Medicare Payment = $900.00 \u00d7 0.80 = $720.00.\n    *   Since assignment is not accepted, Medicare pays the patient directly.\n5.  **Calculate Patient Net Cost:** The patient's legal liability is the Limiting Charge minus the Medicare Payment (or equivalently, the 20% coinsurance plus the 15% excess charge).\n    *   Patient Liability = $1,035.00 (Limit) - $720.00 (Medicare) = $315.00.\n    *   Alternatively: ($900 \u00d7 0.20) + ($900 \u00d7 0.15) = $180 + $135 = $315.00.\n    *   Although the patient paid $1,400.00 upfront, the excess over the limiting charge ($365.00) is not legally owed and is recoverable; the net cost under federal law is the liability amount.\n\nFINAL: $315.00"
+  },
+  {
+   "id": "x14",
+   "suite": "expert",
+   "repeat": 3,
+   "expected": 3906.0,
+   "got": 3906.0,
+   "correct": true,
+   "failure_modes": [],
+   "finish_reason": "stop",
+   "seconds": 64.6,
+   "prompt_tokens": 324,
+   "completion_tokens": 8136,
+   "est_usd": 0.029452,
+   "status": "ok",
+   "output_tail": "d ends after 60 consecutive days without inpatient hospital or skilled nursing facility (SNF) care.\n*   **Gap Analysis:**\n    *   SNF discharge: **Apr 4, 2026**.\n    *   Next Hospital admission: **May 20, 2026**.\n    *   Days without care: Apr 5 through May 19.\n    *   April (30 days total): 30 - 4 = 26 days.\n    *   May: 19 days.\n    *   Total gap: 26 + 19 = 45 days.\n    *   Since 45 days < 60 days, the benefit period **does not reset**. All care falls under Benefit Period 1.\n\n**2. Calculate Hospital Cost-Sharing**\n*   **Stay 1 (Mar 1\u2013Mar 5):**\n    *   Part A Inpatient Deductible (per benefit period): **$1,736.00**.\n    *   Coinsurance (Days 1\u201360): $0.\n*   **Stay 2 (May 20\u2013May 23):**\n    *   Deductible: Already met in March for this benefit period. Cost: $0.\n    *   Coinsurance (Days 1\u201360): $0.\n*   **Total Hospital Cost:** **$1,736.00**.\n\n**3. Calculate SNF Cost-Sharing**\n*   **Stay Duration:** Mar 5 to Apr 4.\n    *   Under Medicare federal law, the day of admission counts, but the day of discharge does not.\n    *   March days (5th\u201331st): 27 days.\n    *   April days (1st\u20133rd): 3 days. (Apr 4 is discharge, not counted).\n    *   Total Countable Days: 27 + 3 = **30 days**.\n*   **Coinsurance Rules:**\n    *   Days 1\u201320: $0.\n    *   Days 21\u2013100: $217.00/day.\n*   **Payable Days:** Days 21 through 30 = **10 days**.\n*   **Total SNF Cost:** 10 days \u00d7 $217.00 = **$2,170.00**.\n\n**4. Total Cost-Sharing**\n*   Hospital: $1,736.00\n*   SNF: $2,170.00\n*   **Total:** $3,906.00\n\nFINAL: $3906.00"
+  }
+ ]
+}

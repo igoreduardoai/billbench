@@ -1,0 +1,81 @@
+{
+ "model": "Qwen/Qwen3.5-397B-A17B",
+ "provider": "nebius",
+ "date": "2026-11-02-1604",
+ "suite": "expert",
+ "temperature": 0,
+ "repeats": 2,
+ "max_tokens": 12000,
+ "rows": [
+  {
+   "id": "x13",
+   "suite": "expert",
+   "repeat": 1,
+   "expected": 680.0,
+   "got": 680.0,
+   "correct": true,
+   "failure_modes": [],
+   "finish_reason": "stop",
+   "seconds": 36.0,
+   "prompt_tokens": 268,
+   "completion_tokens": 5595,
+   "est_usd": 0.020276,
+   "status": "ok",
+   "output_tail": "\n\nUnder Original Medicare Part B rules for Durable Medical Equipment (DME):\n\n1.  **Medicare-Approved Amount:** $900.00 (as stated in the scenario).\n2.  **Medicare Payment:** Medicare pays 80% of the approved amount after the deductible is met.\n    *   $900.00 \u00d7 80% = $720.00.\n    *   Since the patient paid the supplier in full, Medicare reimburses this amount to the patient.\n3.  **Patient Coinsurance:** The patient is responsible for the remaining 20% of the approved amount.\n    *   $900.00 \u00d7 20% = $180.00.\n4.  **Excess Charges:** The supplier is non-participating and did **not** accept assignment. For DMEPOS (unlike physician services), there is **no limiting charge** under federal law; the supplier may bill the patient the full difference between their charge and the approved amount.\n    *   Excess Charge: $1,400.00 (Billed) - $900.00 (Approved) = $500.00.\n5.  **Total Patient Liability:** Coinsurance ($180.00) + Excess Charges ($500.00) = $680.00.\n    *   Alternatively: Total Paid ($1,400.00) - Medicare Reimbursement ($720.00) = $680.00.\n\nNote: Original Medicare Part B does not have an out-of-pocket maximum, so the \"General plan mechanics\" regarding OOP caps do not apply to this specific federal program.\n\nFINAL: $680.00"
+  },
+  {
+   "id": "x14",
+   "suite": "expert",
+   "repeat": 1,
+   "expected": 3906.0,
+   "got": 4123.0,
+   "correct": false,
+   "failure_modes": [
+    "snf_11_days"
+   ],
+   "finish_reason": "stop",
+   "seconds": 24.7,
+   "prompt_tokens": 324,
+   "completion_tokens": 3679,
+   "est_usd": 0.013406,
+   "status": "ok",
+   "output_tail": "\n\n**1. Determine Benefit Period**\nA Medicare Part A benefit period begins on the day of inpatient admission and ends after 60 consecutive days without inpatient hospital or SNF care.\n*   **Start:** Mar 1, 2026 (Hospital admission).\n*   **Gap:** Discharged SNF Apr 4; Next admission May 20. The gap is 45 days (Apr 5\u2013May 19).\n*   **Result:** Since 45 days < 60 days, all stays fall within a **single benefit period**. Only one deductible applies.\n\n**2. Hospital Stay 1 (Mar 1 \u2013 Mar 5)**\n*   This admission triggers the Part A deductible for the benefit period.\n*   **Cost:** $1,736.00\n\n**3. SNF Stay (Mar 5 \u2013 Apr 4)**\n*   **Total Days:** 27 days in March (31 - 5 + 1) + 4 days in April = 31 days.\n*   **Coverage:** Days 1\u201320 are $0. Days 21\u2013100 require coinsurance.\n*   **Chargeable Days:** 31 total - 20 covered = 11 days.\n*   **Cost:** 11 days \u00d7 $217.00/day = $2,387.00\n\n**4. Hospital Stay 2 (May 20 \u2013 May 23)**\n*   Occurs within the same benefit period; deductible already met. Days 1\u201360 have no coinsurance after deductible.\n*   **Cost:** $0.00\n\n**5. Total Cost-Sharing**\n*   $1,736.00 (Deductible) + $2,387.00 (SNF Coinsurance) = $4,123.00\n\nFINAL: $4,123.00"
+  },
+  {
+   "id": "x13",
+   "suite": "expert",
+   "repeat": 2,
+   "expected": 680.0,
+   "got": 299.25,
+   "correct": false,
+   "failure_modes": [
+    "limiting_on_95"
+   ],
+   "finish_reason": "stop",
+   "seconds": 58.6,
+   "prompt_tokens": 268,
+   "completion_tokens": 9305,
+   "est_usd": 0.033632,
+   "status": "ok",
+   "output_tail": "\n\n**Work:**\n\n1.  **Determine the Medicare-Approved Amount for Payment:**\n    The problem states the DMEPOS fee schedule (Participating rate) is $900.00. For a Non-Participating supplier, the Medicare-approved amount is 95% of the fee schedule.\n    $900.00 \\times 0.95 = \\$855.00$\n\n2.  **Calculate Medicare's Payment:**\n    Medicare pays 80% of the Medicare-approved amount for non-participating providers.\n    $\\$855.00 \\times 0.80 = \\$684.00$\n    (Since assignment was not accepted, this is paid to the patient).\n\n3.  **Calculate the Limiting Charge:**\n    Non-participating providers who do not accept assignment are subject to a limiting charge of 115% of the non-participating fee schedule amount.\n    $\\$855.00 \\times 1.15 = \\$983.25$\n    The supplier charged $1,400.00, but the patient is only legally liable for the limiting charge of $983.25. The supplier must refund the excess.\n\n4.  **Calculate Patient's Net Out-of-Pocket Cost:**\n    The patient is liable for the Limiting Charge minus the Medicare reimbursement.\n    Liability ($983.25) - Medicare Payment ($684.00) = $299.25.\n    (Alternatively: Patient paid $1,400. Refund due = $1,400 - $983.25 = $416.75. Medicare reimbursement = $684.00. Net Cost = $1,400 - $416.75 - $684.00 = $299.25).\n\nFINAL: $299.25"
+  },
+  {
+   "id": "x14",
+   "suite": "expert",
+   "repeat": 2,
+   "expected": 3906.0,
+   "got": 4123.0,
+   "correct": false,
+   "failure_modes": [
+    "snf_11_days"
+   ],
+   "finish_reason": "stop",
+   "seconds": 24.7,
+   "prompt_tokens": 324,
+   "completion_tokens": 3679,
+   "est_usd": 0.013406,
+   "status": "ok",
+   "output_tail": "\n\n**1. Determine Benefit Period**\nA Medicare Part A benefit period begins on the day of inpatient admission and ends after 60 consecutive days without inpatient hospital or SNF care.\n*   **Start:** Mar 1, 2026 (Hospital admission).\n*   **Gap:** Discharged SNF Apr 4; Next admission May 20. The gap is 45 days (Apr 5\u2013May 19).\n*   **Result:** Since 45 days < 60 days, all stays fall within a **single benefit period**. Only one deductible applies.\n\n**2. Hospital Stay 1 (Mar 1 \u2013 Mar 5)**\n*   This admission triggers the Part A deductible for the benefit period.\n*   **Cost:** $1,736.00\n\n**3. SNF Stay (Mar 5 \u2013 Apr 4)**\n*   **Total Days:** 27 days in March (31 - 5 + 1) + 4 days in April = 31 days.\n*   **Coverage:** Days 1\u201320 are $0. Days 21\u2013100 require coinsurance.\n*   **Chargeable Days:** 31 total - 20 covered = 11 days.\n*   **Cost:** 11 days \u00d7 $217.00/day = $2,387.00\n\n**4. Hospital Stay 2 (May 20 \u2013 May 23)**\n*   Occurs within the same benefit period; deductible already met. Days 1\u201360 have no coinsurance after deductible.\n*   **Cost:** $0.00\n\n**5. Total Cost-Sharing**\n*   $1,736.00 (Deductible) + $2,387.00 (SNF Coinsurance) = $4,123.00\n\nFINAL: $4,123.00"
+  }
+ ]
+}

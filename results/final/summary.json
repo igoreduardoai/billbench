@@ -1,0 +1,843 @@
+{
+ "models": [
+  "DeepSeek-V4-Pro",
+  "GLM-5.3",
+  "Kimi-K3",
+  "Nemotron-3-Ultra-550b-a55b",
+  "Qwen3.5-397B-A17B"
+ ],
+ "suites": {
+  "expert": {
+   "per_model": {
+    "DeepSeek-V4-Pro": [
+     13,
+     30
+    ],
+    "GLM-5.3": [
+     23,
+     30
+    ],
+    "Kimi-K3": [
+     28,
+     30
+    ],
+    "Nemotron-3-Ultra-550b-a55b": [
+     26,
+     30
+    ],
+    "Qwen3.5-397B-A17B": [
+     27,
+     30
+    ]
+   },
+   "per_task": {
+    "x01": {
+     "DeepSeek-V4-Pro": [
+      1,
+      3
+     ],
+     "GLM-5.3": [
+      3,
+      3
+     ],
+     "Kimi-K3": [
+      3,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      3,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      3,
+      3
+     ]
+    },
+    "x04": {
+     "DeepSeek-V4-Pro": [
+      3,
+      3
+     ],
+     "GLM-5.3": [
+      3,
+      3
+     ],
+     "Kimi-K3": [
+      3,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      2,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      3,
+      3
+     ]
+    },
+    "x05": {
+     "DeepSeek-V4-Pro": [
+      2,
+      3
+     ],
+     "GLM-5.3": [
+      3,
+      3
+     ],
+     "Kimi-K3": [
+      3,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      2,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      3,
+      3
+     ]
+    },
+    "x06": {
+     "DeepSeek-V4-Pro": [
+      0,
+      3
+     ],
+     "GLM-5.3": [
+      3,
+      3
+     ],
+     "Kimi-K3": [
+      3,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      3,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      3,
+      3
+     ]
+    },
+    "x09": {
+     "DeepSeek-V4-Pro": [
+      2,
+      3
+     ],
+     "GLM-5.3": [
+      1,
+      3
+     ],
+     "Kimi-K3": [
+      3,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      3,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      3,
+      3
+     ]
+    },
+    "x10": {
+     "DeepSeek-V4-Pro": [
+      3,
+      3
+     ],
+     "GLM-5.3": [
+      3,
+      3
+     ],
+     "Kimi-K3": [
+      3,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      3,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      3,
+      3
+     ]
+    },
+    "x11": {
+     "DeepSeek-V4-Pro": [
+      2,
+      3
+     ],
+     "GLM-5.3": [
+      3,
+      3
+     ],
+     "Kimi-K3": [
+      3,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      3,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      3,
+      3
+     ]
+    },
+    "x12": {
+     "DeepSeek-V4-Pro": [
+      0,
+      3
+     ],
+     "GLM-5.3": [
+      3,
+      3
+     ],
+     "Kimi-K3": [
+      3,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      3,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      3,
+      3
+     ]
+    },
+    "x13": {
+     "DeepSeek-V4-Pro": [
+      0,
+      3
+     ],
+     "GLM-5.3": [
+      0,
+      3
+     ],
+     "Kimi-K3": [
+      2,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      1,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      0,
+      3
+     ]
+    },
+    "x14": {
+     "DeepSeek-V4-Pro": [
+      0,
+      3
+     ],
+     "GLM-5.3": [
+      1,
+      3
+     ],
+     "Kimi-K3": [
+      2,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      3,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      3,
+      3
+     ]
+    }
+   }
+  },
+  "core": {
+   "per_model": {
+    "DeepSeek-V4-Pro": [
+     26,
+     30
+    ],
+    "GLM-5.3": [
+     30,
+     30
+    ],
+    "Kimi-K3": [
+     30,
+     30
+    ],
+    "Nemotron-3-Ultra-550b-a55b": [
+     27,
+     30
+    ],
+    "Qwen3.5-397B-A17B": [
+     30,
+     30
+    ]
+   },
+   "per_task": {
+    "t01": {
+     "DeepSeek-V4-Pro": [
+      3,
+      3
+     ],
+     "GLM-5.3": [
+      3,
+      3
+     ],
+     "Kimi-K3": [
+      3,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      3,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      3,
+      3
+     ]
+    },
+    "t02": {
+     "DeepSeek-V4-Pro": [
+      3,
+      3
+     ],
+     "GLM-5.3": [
+      3,
+      3
+     ],
+     "Kimi-K3": [
+      3,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      3,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      3,
+      3
+     ]
+    },
+    "t03": {
+     "DeepSeek-V4-Pro": [
+      3,
+      3
+     ],
+     "GLM-5.3": [
+      3,
+      3
+     ],
+     "Kimi-K3": [
+      3,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      3,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      3,
+      3
+     ]
+    },
+    "t04": {
+     "DeepSeek-V4-Pro": [
+      3,
+      3
+     ],
+     "GLM-5.3": [
+      3,
+      3
+     ],
+     "Kimi-K3": [
+      3,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      3,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      3,
+      3
+     ]
+    },
+    "t05": {
+     "DeepSeek-V4-Pro": [
+      3,
+      3
+     ],
+     "GLM-5.3": [
+      3,
+      3
+     ],
+     "Kimi-K3": [
+      3,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      3,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      3,
+      3
+     ]
+    },
+    "t06": {
+     "DeepSeek-V4-Pro": [
+      1,
+      3
+     ],
+     "GLM-5.3": [
+      3,
+      3
+     ],
+     "Kimi-K3": [
+      3,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      3,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      3,
+      3
+     ]
+    },
+    "t07": {
+     "DeepSeek-V4-Pro": [
+      1,
+      3
+     ],
+     "GLM-5.3": [
+      3,
+      3
+     ],
+     "Kimi-K3": [
+      3,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      0,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      3,
+      3
+     ]
+    },
+    "t08": {
+     "DeepSeek-V4-Pro": [
+      3,
+      3
+     ],
+     "GLM-5.3": [
+      3,
+      3
+     ],
+     "Kimi-K3": [
+      3,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      3,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      3,
+      3
+     ]
+    },
+    "t09": {
+     "DeepSeek-V4-Pro": [
+      3,
+      3
+     ],
+     "GLM-5.3": [
+      3,
+      3
+     ],
+     "Kimi-K3": [
+      3,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      3,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      3,
+      3
+     ]
+    },
+    "t10": {
+     "DeepSeek-V4-Pro": [
+      3,
+      3
+     ],
+     "GLM-5.3": [
+      3,
+      3
+     ],
+     "Kimi-K3": [
+      3,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      3,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      3,
+      3
+     ]
+    }
+   }
+  },
+  "control": {
+   "per_model": {
+    "DeepSeek-V4-Pro": [
+     11,
+     12
+    ],
+    "GLM-5.3": [
+     12,
+     12
+    ],
+    "Kimi-K3": [
+     11,
+     12
+    ],
+    "Nemotron-3-Ultra-550b-a55b": [
+     12,
+     12
+    ],
+    "Qwen3.5-397B-A17B": [
+     11,
+     12
+    ]
+   },
+   "per_task": {
+    "x02": {
+     "DeepSeek-V4-Pro": [
+      3,
+      3
+     ],
+     "GLM-5.3": [
+      3,
+      3
+     ],
+     "Kimi-K3": [
+      3,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      3,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      3,
+      3
+     ]
+    },
+    "r03": {
+     "DeepSeek-V4-Pro": [
+      2,
+      3
+     ],
+     "GLM-5.3": [
+      3,
+      3
+     ],
+     "Kimi-K3": [
+      3,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      3,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      3,
+      3
+     ]
+    },
+    "x07": {
+     "DeepSeek-V4-Pro": [
+      3,
+      3
+     ],
+     "GLM-5.3": [
+      3,
+      3
+     ],
+     "Kimi-K3": [
+      2,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      3,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      2,
+      3
+     ]
+    },
+    "r08": {
+     "DeepSeek-V4-Pro": [
+      3,
+      3
+     ],
+     "GLM-5.3": [
+      3,
+      3
+     ],
+     "Kimi-K3": [
+      3,
+      3
+     ],
+     "Nemotron-3-Ultra-550b-a55b": [
+      3,
+      3
+     ],
+     "Qwen3.5-397B-A17B": [
+      3,
+      3
+     ]
+    }
+   }
+  }
+ },
+ "failures": [
+  {
+   "task": "t06",
+   "model": "DeepSeek-V4-Pro",
+   "got": "$621.00",
+   "expected": "$505.00",
+   "mode": "wrong amount not matching any simulated mistake",
+   "runs": 2
+  },
+  {
+   "task": "t07",
+   "model": "DeepSeek-V4-Pro",
+   "got": "$1,375.00",
+   "expected": "$1,030.00",
+   "mode": "applies out-of-network coinsurance on the recognized amount (no balance bill) despite the No Surprises Act",
+   "runs": 1
+  },
+  {
+   "task": "t07",
+   "model": "DeepSeek-V4-Pro",
+   "got": "$3,425.00",
+   "expected": "$1,030.00",
+   "mode": "applies out-of-network coinsurance and balance billing despite No Surprises Act protection",
+   "runs": 1
+  },
+  {
+   "task": "t07",
+   "model": "Nemotron-3-Ultra-550b-a55b",
+   "got": "$1,375.00",
+   "expected": "$1,030.00",
+   "mode": "applies out-of-network coinsurance on the recognized amount (no balance bill) despite the No Surprises Act",
+   "runs": 3
+  },
+  {
+   "task": "x01",
+   "model": "DeepSeek-V4-Pro",
+   "got": "$1,375.00",
+   "expected": "$1,030.00",
+   "mode": "blocked the balance bill but kept the 50% out-of-network coinsurance",
+   "runs": 2
+  },
+  {
+   "task": "x04",
+   "model": "Nemotron-3-Ultra-550b-a55b",
+   "got": "$70.00",
+   "expected": "$66.50",
+   "mode": "skipped the 95% non-participating reduction (limiting charge $230 instead of $218.50)",
+   "runs": 1
+  },
+  {
+   "task": "x05",
+   "model": "DeepSeek-V4-Pro",
+   "got": "$148.50",
+   "expected": "$120.00",
+   "mode": "made the patient pay the excess charge (Plan G covers it)",
+   "runs": 1
+  },
+  {
+   "task": "x05",
+   "model": "Nemotron-3-Ultra-550b-a55b",
+   "got": "$126.00",
+   "expected": "$120.00",
+   "mode": "wrong amount not matching any simulated mistake",
+   "runs": 1
+  },
+  {
+   "task": "x06",
+   "model": "DeepSeek-V4-Pro",
+   "got": "$1,736.00",
+   "expected": "$3,472.00",
+   "mode": "treated the Part A deductible as annual; merged all stays into one benefit period",
+   "runs": 2
+  },
+  {
+   "task": "x06",
+   "model": "DeepSeek-V4-Pro",
+   "got": "$5,208.00",
+   "expected": "$3,472.00",
+   "mode": "charged the Part A deductible for every admission",
+   "runs": 1
+  },
+  {
+   "task": "x09",
+   "model": "DeepSeek-V4-Pro",
+   "got": "$1,380.00",
+   "expected": "$980.00",
+   "mode": "applied the family cap to claim 3 but then charged Blair's own remaining deductible on claim 4",
+   "runs": 1
+  },
+  {
+   "task": "x09",
+   "model": "GLM-5.3",
+   "got": "$740.00",
+   "expected": "$980.00",
+   "mode": "wrong amount not matching any simulated mistake",
+   "runs": 1
+  },
+  {
+   "task": "x09",
+   "model": "GLM-5.3",
+   "got": "none",
+   "expected": "$980.00",
+   "mode": "no parseable FINAL: $X.XX line",
+   "runs": 1
+  },
+  {
+   "task": "x11",
+   "model": "DeepSeek-V4-Pro",
+   "got": "$0.00",
+   "expected": "$4,500.00",
+   "mode": "counted observation time toward the 3-day rule and treated SNF days 1-20 as covered",
+   "runs": 1
+  },
+  {
+   "task": "x12",
+   "model": "DeepSeek-V4-Pro",
+   "got": "$8,680.00",
+   "expected": "$8,246.00",
+   "mode": "counted the discharge day as an inpatient day; started coinsurance on day 60",
+   "runs": 3
+  },
+  {
+   "task": "x13",
+   "model": "DeepSeek-V4-Pro",
+   "got": "$29.93",
+   "expected": "$68.00",
+   "mode": "wrong amount not matching any simulated mistake",
+   "runs": 1
+  },
+  {
+   "task": "x13",
+   "model": "DeepSeek-V4-Pro",
+   "got": "$31.50",
+   "expected": "$68.00",
+   "mode": "capped the supplier at a 115% limiting charge (it applies to physician services, not DME)",
+   "runs": 1
+  },
+  {
+   "task": "x13",
+   "model": "DeepSeek-V4-Pro",
+   "got": "$71.60",
+   "expected": "$68.00",
+   "mode": "wrong amount not matching any simulated mistake",
+   "runs": 1
+  },
+  {
+   "task": "x13",
+   "model": "GLM-5.3",
+   "got": "$31.50",
+   "expected": "$68.00",
+   "mode": "capped the supplier at a 115% limiting charge (it applies to physician services, not DME)",
+   "runs": 2
+  },
+  {
+   "task": "x13",
+   "model": "GLM-5.3",
+   "got": "none",
+   "expected": "$68.00",
+   "mode": "no parseable FINAL: $X.XX line",
+   "runs": 1
+  },
+  {
+   "task": "x13",
+   "model": "Kimi-K3",
+   "got": "none",
+   "expected": "$68.00",
+   "mode": "no parseable FINAL: $X.XX line",
+   "runs": 1
+  },
+  {
+   "task": "x13",
+   "model": "Nemotron-3-Ultra-550b-a55b",
+   "got": "$31.50",
+   "expected": "$68.00",
+   "mode": "capped the supplier at a 115% limiting charge (it applies to physician services, not DME)",
+   "runs": 2
+  },
+  {
+   "task": "x13",
+   "model": "Qwen3.5-397B-A17B",
+   "got": "$18.00",
+   "expected": "$68.00",
+   "mode": "assumed the supplier must accept the approved amount",
+   "runs": 1
+  },
+  {
+   "task": "x13",
+   "model": "Qwen3.5-397B-A17B",
+   "got": "$31.50",
+   "expected": "$68.00",
+   "mode": "capped the supplier at a 115% limiting charge (it applies to physician services, not DME)",
+   "runs": 2
+  },
+  {
+   "task": "x14",
+   "model": "DeepSeek-V4-Pro",
+   "got": "$4,123.00",
+   "expected": "$3,906.00",
+   "mode": "counted the SNF discharge day",
+   "runs": 3
+  },
+  {
+   "task": "x14",
+   "model": "GLM-5.3",
+   "got": "$4,123.00",
+   "expected": "$3,906.00",
+   "mode": "counted the SNF discharge day",
+   "runs": 1
+  },
+  {
+   "task": "x14",
+   "model": "GLM-5.3",
+   "got": "none",
+   "expected": "$3,906.00",
+   "mode": "no parseable FINAL: $X.XX line",
+   "runs": 1
+  },
+  {
+   "task": "x14",
+   "model": "Kimi-K3",
+   "got": "$4,123.00",
+   "expected": "$3,906.00",
+   "mode": "counted the SNF discharge day",
+   "runs": 1
+  }
+ ]
+}

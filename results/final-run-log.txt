@@ -1,0 +1,5 @@
+deepseek-ai/DeepSeek-V4-Pro: 50/72 correct (0 skipped: budget or infra error) -> /workspace/hackathons-online/micro1-eval/billbench/results/all-DeepSeek-V4-Pro-2026-11-02-1610.json; cum est $3.8556
+moonshotai/Kimi-K3: 69/72 correct (0 skipped: budget or infra error) -> /workspace/hackathons-online/micro1-eval/billbench/results/all-Kimi-K3-2026-11-02-1610.json; cum est $5.2712
+zai-org/GLM-5.3: 65/72 correct (0 skipped: budget or infra error) -> /workspace/hackathons-online/micro1-eval/billbench/results/all-GLM-5.3-2026-11-02-1610.json; cum est $5.8357
+Qwen/Qwen3.5-397B-A17B: 68/72 correct (0 skipped: budget or infra error) -> /workspace/hackathons-online/micro1-eval/billbench/results/all-Qwen3.5-397B-A17B-2026-11-02-1610.json; cum est $7.1871
+nvidia/Nemotron-3-Ultra-550b-a55b: 65/72 correct (0 skipped: budget or infra error) -> /workspace/hackathons-online/micro1-eval/billbench/results/all-Nemotron-3-Ultra-550b-a55b-2026-11-02-1610.json; cum est $7.5064

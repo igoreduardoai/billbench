@@ -1,0 +1,111 @@
+{
+ "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+ "provider": "nebius",
+ "date": "2026-11-02-1605",
+ "suite": "expert",
+ "temperature": 0,
+ "repeats": 3,
+ "max_tokens": 12000,
+ "rows": [
+  {
+   "id": "x13",
+   "suite": "expert",
+   "repeat": 1,
+   "expected": 680.0,
+   "got": 315.0,
+   "correct": false,
+   "failure_modes": [
+    "limiting_charge_applied"
+   ],
+   "finish_reason": "stop",
+   "seconds": 7.8,
+   "prompt_tokens": 285,
+   "completion_tokens": 2468,
+   "est_usd": 0.006094,
+   "status": "ok",
+   "output_tail": "The supplier is non-participating and does not accept assignment, so the limiting charge applies: 115% \u00d7 $900 = $1,035. Medicare pays 80% of the approved amount (deductible met): 0.80 \u00d7 $900 = $720 (paid to the patient). The patient\u2019s total liability is the limiting charge ($1,035). After the $720 Medicare payment, the patient\u2019s net cost is $1,035 \u2013 $720 = $315. (The $1,400 paid to the supplier is reduced by a $365 refund for the excess over the limiting charge.)\n\nFINAL: $315.00"
+  },
+  {
+   "id": "x14",
+   "suite": "expert",
+   "repeat": 1,
+   "expected": 3906.0,
+   "got": 3906.0,
+   "correct": true,
+   "failure_modes": [],
+   "finish_reason": "stop",
+   "seconds": 8.0,
+   "prompt_tokens": 333,
+   "completion_tokens": 2622,
+   "est_usd": 0.006493,
+   "status": "ok",
+   "output_tail": "The patient's care occurs within a single Medicare Part A benefit period that begins March 1, 2026 (first inpatient admission) and does not end because there is no 60-day period without inpatient hospital or SNF care (the gap between SNF discharge April 4 and next hospital admission May 20 is only 45 days).\n\n**Cost-sharing for the benefit period:**\n- **Inpatient hospital deductible:** $1,736.00 (applies once per benefit period).\n- **Hospital inpatient days:** March 1\u20134 (4 days) + May 20\u201322 (3 days) = 7 days. All are within the first 60 days of the benefit period, so no hospital coinsurance.\n- **SNF days:** March 5 \u2013 April 3 = 30 days (admission day counts, discharge day does not).  \n  - Days 1\u201320: $0 coinsurance.  \n  - Days 21\u201330: 10 days \u00d7 $217.00/day = $2,170.00.\n\n**Total Part A cost-sharing:** $1,736.00 + $2,170.00 = $3,906.00.\n\nFINAL: $3,906.00"
+  },
+  {
+   "id": "x13",
+   "suite": "expert",
+   "repeat": 2,
+   "expected": 680.0,
+   "got": 680.0,
+   "correct": true,
+   "failure_modes": [],
+   "finish_reason": "stop",
+   "seconds": 8.4,
+   "prompt_tokens": 285,
+   "completion_tokens": 2752,
+   "est_usd": 0.006776,
+   "status": "ok",
+   "output_tail": "The patient has met the Part B deductible. For a non-participating DME supplier that does not accept assignment, the patient pays the supplier's full charge ($1,400.00). Medicare then reimburses the patient 80% of the Medicare-approved amount ($900.00), since the deductible is met.\n\nMedicare payment = 80% \u00d7 $900.00 = $720.00  \nPatient's net out-of-pocket = Amount paid to supplier \u2013 Medicare reimbursement = $1,400.00 \u2013 $720.00 = $680.00\n\nFINAL: $680.00"
+  },
+  {
+   "id": "x14",
+   "suite": "expert",
+   "repeat": 2,
+   "expected": 3906.0,
+   "got": 3906.0,
+   "correct": true,
+   "failure_modes": [],
+   "finish_reason": "stop",
+   "seconds": 6.9,
+   "prompt_tokens": 333,
+   "completion_tokens": 2228,
+   "est_usd": 0.005547,
+   "status": "ok",
+   "output_tail": "The patient's care occurs within a single benefit period (Mar 1 \u2013 May 23, with no 60-day break).  \n- **Part A inpatient deductible** (once per benefit period): $1,736.00.  \n- **SNF stay**: Mar 5 \u2013 Apr 4 = 30 days (admission day counts, discharge day does not).  \n  - Days 1\u201320: fully covered after deductible.  \n  - Days 21\u201330 (10 days): coinsurance at $217.00/day = $2,170.00.  \n- **Second hospital stay** (May 20\u201323, 4 days): within first 60 hospital days of benefit period \u2192 no additional cost-sharing.  \n\nTotal cost-sharing = $1,736.00 + $2,170.00 = $3,906.00.\n\nFINAL: $3906.00"
+  },
+  {
+   "id": "x13",
+   "suite": "expert",
+   "repeat": 3,
+   "expected": 680.0,
+   "got": 315.0,
+   "correct": false,
+   "failure_modes": [
+    "limiting_charge_applied"
+   ],
+   "finish_reason": "stop",
+   "seconds": 14.2,
+   "prompt_tokens": 285,
+   "completion_tokens": 5265,
+   "est_usd": 0.012807,
+   "status": "ok",
+   "output_tail": "The supplier is a non-participating provider that does not accept assignment. For such claims, Medicare limits the patient's liability to the limiting charge (115% of the Medicare-approved amount) and pays the patient 80% of the approved amount (since the Part B deductible is met).\n\n- Medicare-approved amount: $900.00\n- Limiting charge: 115% \u00d7 $900.00 = $1,035.00\n- Medicare payment to patient: 80% \u00d7 $900.00 = $720.00\n- Patient's net out-of-pocket cost: Limiting charge \u2013 Medicare payment = $1,035.00 \u2013 $720.00 = $315.00\n\n(The supplier's charge of $1,400.00 exceeds the limiting charge; the excess is not the patient's responsibility.)\n\nFINAL: $315.00"
+  },
+  {
+   "id": "x14",
+   "suite": "expert",
+   "repeat": 3,
+   "expected": 3906.0,
+   "got": 3906.0,
+   "correct": true,
+   "failure_modes": [],
+   "finish_reason": "stop",
+   "seconds": 8.2,
+   "prompt_tokens": 333,
+   "completion_tokens": 2693,
+   "est_usd": 0.006663,
+   "status": "ok",
+   "output_tail": "The patient's care occurs within a single benefit period (started Mar 1, 2026; not yet ended by May 23 because only 45 days without care occurred between Apr 4 and May 20).\n\n**Hospital (Part A):**  \n- First stay: Mar 1\u20135 (4 inpatient days).  \n- Second stay: May 20\u201323 (3 inpatient days).  \n- Total hospital days = 7 (all within days 1\u201360 of benefit period).  \n- Cost-sharing: one inpatient deductible = $1,736.00. No coinsurance.\n\n**SNF (Part A):**  \n- Stay: Mar 5 \u2013 Apr 4. Admission day counts, discharge day does not.  \n- Days = 27 (Mar 5\u201331) + 3 (Apr 1\u20133) = 30 days.  \n- Days 1\u201320: $0 coinsurance.  \n- Days 21\u201330: 10 days \u00d7 $217.00/day = $2,170.00.\n\n**Total Part A cost-sharing:** $1,736.00 + $2,170.00 = $3,906.00.\n\nFINAL: $3906.00"
+  }
+ ]
+}

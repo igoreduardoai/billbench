@@ -1,0 +1,117 @@
+{
+ "model": "zai-org/GLM-5.3",
+ "provider": "nebius",
+ "date": "2026-11-02-1605",
+ "suite": "expert",
+ "temperature": 0,
+ "repeats": 3,
+ "max_tokens": 12000,
+ "rows": [
+  {
+   "id": "x13",
+   "suite": "expert",
+   "repeat": 1,
+   "expected": 680.0,
+   "got": 315.0,
+   "correct": false,
+   "failure_modes": [
+    "limiting_charge_applied"
+   ],
+   "finish_reason": "stop",
+   "seconds": 40.6,
+   "prompt_tokens": 255,
+   "completion_tokens": 7883,
+   "est_usd": 0.028494,
+   "status": "ok",
+   "output_tail": "**Setup:** Unassigned claim from a Medicare-enrolled, non-participating DMEPOS supplier \u2192 Medicare pays the *beneficiary* directly, and the supplier's charges are capped by the **limiting charge** (115% of the approved amount, SSA \u00a71842(b)).\n\n**Step 1 \u2014 Medicare payment:**\n- Approved amount (DMEPOS fee schedule): $900.00\n- Deductible already met \u2192 Medicare pays 80% \u00d7 $900.00 = **$720.00** to the patient.\n\n**Step 2 \u2014 Patient's lawful liability to the supplier:**\n- Limiting charge = 115% \u00d7 $900.00 = **$1,035.00**\n- Supplier billed $1,400.00, which exceeds the limiting charge by $365.00. A non-participating supplier may not balance-bill above the limiting charge, so the patient is not legally liable for the excess and is entitled to a refund of the $365.00 overpayment.\n\n**Step 3 \u2014 Net out-of-pocket:**\n- Patient's capped liability: $1,035.00\n- Less Medicare reimbursement: \u2212$720.00\n- Net = $1,035.00 \u2212 $720.00 = **$315.00** (= $180.00 coinsurance + $135.00 above the approved amount)\n\nNote: Original Medicare has no out-of-pocket maximum, so no further cap applies.\n\nFINAL: $315.00"
+  },
+  {
+   "id": "x14",
+   "suite": "expert",
+   "repeat": 1,
+   "expected": 3906.0,
+   "got": 3906.0,
+   "correct": true,
+   "failure_modes": [],
+   "finish_reason": "stop",
+   "seconds": 38.0,
+   "prompt_tokens": 291,
+   "completion_tokens": 7255,
+   "est_usd": 0.026249,
+   "status": "ok",
+   "output_tail": "**Step 1 \u2013 Benefit period 1 begins Mar 1.**\nHospital stay #1 (Mar 1\u20135) is in a new benefit period \u2192 patient owes the Part A inpatient deductible once: **$1,736.00**. (Stay is only 4 covered days \u2014 admission day counts, discharge day doesn't \u2014 so no day-61+ coinsurance.)\n\n**Step 2 \u2013 SNF stay (Mar 5\u2013Apr 4), same benefit period.**\nCovered SNF days = admission day through day before discharge = Mar 5\u2013Apr 3 = **30 days**.\n- Days 1\u201320: fully covered \u2192 $0\n- Days 21\u201330: 10 days \u00d7 $217.00 = **$2,170.00**\n\n**Step 3 \u2013 Hospital stay #2 (May 20\u201323): same or new benefit period?**\nA benefit period ends only after 60 *consecutive* days with no inpatient hospital or SNF care. Last SNF day is Apr 4, so 60 clean days wouldn't elapse until ~June 3. The May 20 readmission falls in the **same benefit period**:\n- Deductible already met \u2192 $0\n- Cumulative inpatient days in the period: 4 + 3 = 7 (well under day 61) \u2192 no daily hospital coinsurance \u2192 **$0**\n\n**Step 4 \u2013 Total Part A cost-sharing:**\n$1,736.00 + $2,170.00 + $0.00 = **$3,906.00**\n\nFINAL: $3,906.00"
+  },
+  {
+   "id": "x13",
+   "suite": "expert",
+   "repeat": 2,
+   "expected": 680.0,
+   "got": null,
+   "correct": false,
+   "failure_modes": [
+    "no_final_answer"
+   ],
+   "finish_reason": "length",
+   "seconds": 62.7,
+   "prompt_tokens": 255,
+   "completion_tokens": 12000,
+   "est_usd": 0.043315,
+   "status": "ok",
+   "output_tail": ""
+  },
+  {
+   "id": "x14",
+   "suite": "expert",
+   "repeat": 2,
+   "expected": 3906.0,
+   "got": 4123.0,
+   "correct": false,
+   "failure_modes": [
+    "snf_11_days"
+   ],
+   "finish_reason": "stop",
+   "seconds": 10.0,
+   "prompt_tokens": 291,
+   "completion_tokens": 1725,
+   "est_usd": 0.006341,
+   "status": "ok",
+   "output_tail": "**Step 1 \u2013 Benefit period check.** A benefit period ends only after 60 consecutive days with no inpatient hospital or SNF care. SNF discharge Apr 4 \u2192 readmission May 20 is only 44 days later (Apr 5\u2013May 19), so all three stays fall in **one benefit period**.\n\n**Step 2 \u2013 Hospital stays.**\n- Mar 1\u20135 and May 20\u201323 inpatient stays are in the same benefit period, so the Part A deductible applies **once**: $1,736.00.\n- Total inpatient days \u2248 7, far below day 61, so no daily hospital coinsurance.\n\n**Step 3 \u2013 SNF stay (Mar 5\u2013Apr 4).**\n- Days used: Mar 5\u201331 (27) + Apr 1\u20134 (4) = **31 days**, same benefit period.\n- Days 1\u201320: $0.\n- Days 21\u201331: 11 days \u00d7 $217.00 = **$2,387.00**.\n\n**Step 4 \u2013 Total.**\n$1,736.00 + $2,387.00 = **$4,123.00**\n\nFINAL: $4,123.00"
+  },
+  {
+   "id": "x13",
+   "suite": "expert",
+   "repeat": 3,
+   "expected": 680.0,
+   "got": 315.0,
+   "correct": false,
+   "failure_modes": [
+    "limiting_charge_applied"
+   ],
+   "finish_reason": "stop",
+   "seconds": 15.5,
+   "prompt_tokens": 255,
+   "completion_tokens": 2521,
+   "est_usd": 0.00919,
+   "status": "ok",
+   "output_tail": "**Setup:** Unassigned claim from an enrolled, non-participating DMEPOS supplier \u2192 the **limiting charge** rule applies (supplier may not bill the patient more than 115% of the Medicare-approved amount). Deductible already met; Part B coinsurance is 20% of the approved amount. (Note: Original Medicare has no OOP maximum, so that plan mechanic doesn't apply here.)\n\n**Step 1 \u2014 Medicare's calculation:**\n- Approved amount (DMEPOS fee schedule): $900.00\n- Medicare pays 80%: $720.00 \u2014 sent to the *patient* because the claim is unassigned\n- Patient coinsurance (20%): $180.00\n\n**Step 2 \u2014 Limiting charge cap:**\n- Limiting charge = 115% \u00d7 $900.00 = **$1,035.00**\n- Supplier billed $1,400.00, but may only collect $1,035.00 \u2192 must refund $1,400.00 \u2212 $1,035.00 = **$365.00**\n\n**Step 3 \u2014 Patient's net cost:**\n- Patient's total liability to supplier: $1,035.00\n- Less Medicare's reimbursement to patient: \u2212$720.00\n- Net out-of-pocket = $1,035.00 \u2212 $720.00 = **$315.00**\n- (Check: $180.00 coinsurance + $135.00 excess up to limiting charge = $315.00 \u2713)\n\nFINAL: $315.00"
+  },
+  {
+   "id": "x14",
+   "suite": "expert",
+   "repeat": 3,
+   "expected": 3906.0,
+   "got": null,
+   "correct": false,
+   "failure_modes": [
+    "no_final_answer"
+   ],
+   "finish_reason": "length",
+   "seconds": 66.2,
+   "prompt_tokens": 291,
+   "completion_tokens": 12000,
+   "est_usd": 0.043331,
+   "status": "ok",
+   "output_tail": ""
+  }
+ ]
+}
