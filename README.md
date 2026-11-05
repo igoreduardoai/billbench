@@ -1,5 +1,9 @@
 # BillBench: where frontier models get US medical-bill math wrong
 
+## Demo video
+- Unlisted walkthrough (2:31): https://youtu.be/6gdOIew4Wao
+- Submitted to micro1 Eval Hackathon on HackerRank 2026-11-05 (CST).
+
 ## At a glance
 - **What:** an eval of one question patients and billing staff ask every day: *"how much does the patient owe?"* 10 scored tasks (BillBench-Expert), each with one answer to the cent, graded by a deterministic engine. No LLM judge.
 - **Headline result (2 Nov 2026, 5 frontier open-weight models, 3 runs each, temperature 0):** **117/150 (78%)** on Expert vs **143/150 (95%)** on a Core control where every rule is spelled out. Same models, same arithmetic, so the gap is missing billing knowledge, not math.
